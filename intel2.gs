@@ -33,16 +33,19 @@ if params.len != 1 or params[0] == "-h" or params[0] == "--help" then exit("<b>U
 if not is_valid_ip(params[0]) then exit(ERROR_INVALID_IP) //Validate IP Address
 if not get_shell.host_computer.is_network_active then exit(ERROR_INVALID_IP)
 ip = params[0]
-
 // Verify LAN Status of IP
 isLAN = is_lan_ip(ip)
 // Build Router Object
 if isLAN then
-   router = get_router;
+    router = get_router;
 else 
-   router = get_router(ip)
+    router = get_router(ip)
 end if
 if router == null then exit(ERROR_ROUTER_NULL)
+
+// Target IP Address
+print("IP: "+ip)
+print()
 
 // Whois
 if not isLAN then 
