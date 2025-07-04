@@ -44,7 +44,7 @@ end if
 if router == null then exit(ERROR_ROUTER_NULL)
 
 // Target IP Address
-print("IP: <b>"+ip+"</b>)
+print("IP: <b>"+ip+"</b>")
 print()
 
 // Whois
